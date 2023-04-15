@@ -1,11 +1,14 @@
 package com.nfeeds.data.subscriptions.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class Subscription {
@@ -15,10 +18,10 @@ public class Subscription {
     private String id;
 
     @Column(nullable = false)
-    private String user_id;
+    private String userId;
 
     @Column(nullable = false)
-    private String topic_id;
+    private String topicId;
 
     private String callback;
 }
