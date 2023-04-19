@@ -13,15 +13,19 @@ import lombok.Setter;
 @Entity
 public class Subscription {
 
+    /** Auto-generated identifier for the subscription. */
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    /** Identifier of the user that has subscribed to some topic. */
     @Column(nullable = false)
     private String userId;
 
+    /** The identifier of the topic to which the user has subscribed to. */
     @Column(nullable = false)
     private String topicId;
 
+    /** Endpoint to which the system will send the new messages. */
     private String callback;
 }
