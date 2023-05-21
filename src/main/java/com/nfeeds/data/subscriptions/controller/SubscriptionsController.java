@@ -20,9 +20,9 @@ public class SubscriptionsController {
 	private final SubscriptionRepository subscriptionRepository;
 	
 	@PostMapping("/")
-	public void newSubscription(@RequestBody Subscription body){
+	public Subscription newSubscription(@RequestBody Subscription body){
 		log.debug(this.getClass().getSimpleName() + " - newSubscription");
-		subscriptionRepository.save(body);
+		return subscriptionRepository.save(body);
 	}
 	
 	@GetMapping("/{id}")
