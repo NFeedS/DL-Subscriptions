@@ -31,7 +31,7 @@ public class SubscriptionsController {
 		return subscriptionRepository.findById(sub_id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Subscription " + sub_id + " not found"));
 	}
 	
-	@GetMapping("user/{id}")
+	@GetMapping("/user/{id}")
 	public List<Subscription> getSubscriptionByUser(@PathVariable("id") String user_id){
 		log.debug(this.getClass().getSimpleName() + " - getSubscriptionByUser");
 		return subscriptionRepository.getSubscriptionsByUserId(user_id);
